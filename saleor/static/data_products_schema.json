@@ -1,0 +1,52 @@
+# InsaiVue Domain Model & Ubiquitous Language (Marketplace Context)
+
+## Ubiquitous Language (通用領域語言)
+
+* **Data Asset (數據資產)**: 經過 AI 治理與合規清洗後的標準化數據產品，可被上架並授予商業使用權。
+* **Hero Product (主打旗艦產品)**: 新光三越 A9 一樓消費者輪廓分析 (SKM A9 1F Profile)，作為端到端 Demo 的主要載體。
+* **Adaptive Offer (自適應報價)**: 依據買方組織情境（規模、用途、競業關係）與資料貢獻互惠折抵，動態計算出的最終授權價格。
+* **Insight Credit (IC, 點數)**: 平台內部計價與結算單位 (1 IC = 1 USD 在系統計價中對齊)。
+* **Entitlement (授權憑證)**: 買方購買數據資產後獲得的不可篡改授權合約證書（如 `ENT-2026-0815-0091`）。
+
+---
+
+## Data Product Schema & Attributes (產品規格定義)
+
+### 1. 產品類型 (Product Type)
+* **Name**: `Data Asset (數據資產)`
+* **Slug**: `data-asset`
+* **Kind**: `Normal` (Has Variants: `False`)
+
+### 2. 自訂屬性 (Custom Attributes)
+1. **Data Coverage (`data-coverage`)**: 資料涵蓋範圍 (如: `台北信義商圈 A9 館 1F 門市全域`)
+2. **Data Period (`data-period`)**: 時間涵蓋區間 (如: `2024-Q1 ~ 2026-Q2`)
+3. **Sample Size (`sample-size`)**: 去識別化樣本筆數 (如: `1,280,000+ 筆`)
+4. **Compliance Grade (`compliance-grade`)**: 合規評級 (如: `Tier-A / GDPR-ready / ISO-27001`)
+5. **Update Frequency (`update-frequency`)**: 數據更新頻率 (如: `每週滾動更新 (Weekly Rolling)`)
+6. **Data Format (`data-format`)**: 交付管道 (如: `API / Parquet / Snowflake Data Share`)
+7. **License Type (`license-type`)**: 授權等級 (如: `內部商業使用授權 (Internal Commercial Use)`)
+
+---
+
+## 3 款 Hero 數據產品目錄
+
+### Product 1: 新光三越 A9 一樓消費者輪廓分析 (Hero 1)
+* **Slug**: `skm-a9-1f-consumer-profile`
+* **Base Price**: 100 IC (USD 100.00 / PLN 400.00)
+* **Category**: `消費者輪廓與商圈洞察`
+* **Media**: `demographics.png` (主圖), `neural_network.png` (副圖)
+* **Summary**: 深入解析 A9 1F 美妝與精品專櫃客群輪廓，25-34 歲女性佔比達 38%，週末停留時長與高客單價動線熱點分析。
+
+### Product 2: 信義商圈人流趨勢 (Hero 2)
+* **Slug**: `xinyi-district-foot-traffic`
+* **Base Price**: 80 IC (USD 80.00 / PLN 320.00)
+* **Category**: `人流與時段分析`
+* **Media**: `foot_traffic.png` (主圖), `age_cohort.png` (副圖)
+* **Summary**: 信義計畫區步行商圈人流尖峰時段（17:00-21:30）分佈、平假日客流差異與周邊交通節點人潮導流曲線。
+
+### Product 3: 百貨週年慶人流洞察 (Hero 3)
+* **Slug**: `department-store-anniversary-insights`
+* **Base Price**: 120 IC (USD 120.00 / PLN 480.00)
+* **Category**: `檔期促銷與消費預測`
+* **Media**: `age_cohort.png` (主圖), `industry_retail.png` (副圖)
+* **Summary**: 彙整歷年週年慶檔期跨世代客群進店行為、停留時段熱度矩陣與消費轉換率預測模型。
